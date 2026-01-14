@@ -33,7 +33,7 @@ export interface CartItem {
   id: number;        // 장바구니 아이템 고유 ID
   product: Product;
   quantity: number;
-  selectedOption?: { [key: string]: string }; // { "색상": "빨강" }
+  selectedOptions?: { [key: string]: string }; // { "색상": "빨강" }
 }
 
 // 필터 상태
