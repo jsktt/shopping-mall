@@ -34,7 +34,7 @@ function Home() {
                     {categories.map(category => (
                         <Link
                             key={category}
-                            to={`/products?category=&{category}`}
+                            to={`/products?category=${category}`}
                             className={styles.categoryCard}
                         >
                             {category}
