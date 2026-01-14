@@ -17,7 +17,7 @@ interface ProductProviderProps {
     children: ReactNode;
 }
 
-const ProductProvider = ({ children }: ProductProviderProps) => {
+export const ProductProvider = ({ children }: ProductProviderProps) => {
     const [products] = useState<Product[]>(PRODUCTS);
 
     const getProduct = (id: number): Product | undefined => {
