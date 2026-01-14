@@ -40,8 +40,9 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
     const filterProducts = (filter: FilterState): Product[] => {
         return products
             .filter(it => {
-                if (filter.category === 'all') return true;
-                return filter.minPrice <= it.price && it.price <= filter.maxPrice;
+                const categoryMatches = filter.category === 'all' ? true : it.category === filter.category;
+                const priceMatches = filter.minPrice <= it.price && it.price <= filter.maxPrice;
+                return categoryMatches && priceMatches;
             })
             .sort((a, b) => {
                 switch (filter.sortBy) {
