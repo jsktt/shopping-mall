@@ -87,18 +87,18 @@ function ProductList() {
                         <option value="popular">인기순</option>
                         <option value="price-low">가격 낮은순</option>
                         <option value="price-high">가격 높은순</option>
-                        <option value="popular">최신순</option>
+                        <option value="new">최신순</option>
                     </select>
                 </div>
             </div>
 
             {/* 상품 개수 */}
             <p className={styles.count}>
-                총 {filterProducts.length}개의 상품
+                총 {filteredProducts.length}개의 상품
             </p>
 
             {/* 상품 그리도 */}
-            {filterProducts.length > 0 ? (
+            {filteredProducts.length > 0 ? (
                 <div className={styles.productGrid}>
                     {filteredProducts.map(product => (
                         <ProductCard key={product.id} product={product} />
